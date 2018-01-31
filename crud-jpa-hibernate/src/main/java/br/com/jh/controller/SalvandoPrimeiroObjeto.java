@@ -12,12 +12,12 @@ public class SalvandoPrimeiroObjeto {
 		
 		//EntityManagerFactory -< fabrica de EntityManager
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemploPU");
-		//Para funcionar devo criar primeiro o EntityManagerFactory
+		//serviço central para todas as ações de persistência. Para funcionar devo criar primeiro o EntityManagerFactory
 		EntityManager em = emf.createEntityManager();
 		
 		
-		//toda vez ao inicializar um banco de dados, deve iniciar uma transa��o
-		// o begin faz isso e atualiza o banco de dados de pois deve usar o commit para commitar a transa��o.
+		//toda vez ao inicializar um banco de dados, deve iniciar uma transação
+		// o begin faz isso e atualiza o banco de dados depois deve usar o commit para commitar a transação.
 		Cliente cliente = new Cliente();
 
 		cliente.setNome("Caic Souza Passos");
