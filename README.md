@@ -7,4 +7,6 @@
 	* Toda vez ao inicializar um banco de dados, deve iniciar uma transação o begin faz isso e atualiza o banco de dados depois deve usar o commit para commitar a transação.
 	
  ## Anotações:
-	* em.find(Cliente.class, 2L) - //Buscar pela classe e pelo codigo.
+ 
+	* em.find(Cliente.class, 2L) - Buscar pela classe e pelo codigo.
+	* em.remove(cliente) - Remove o cliente.
