@@ -6,8 +6,8 @@ import javax.persistence.Persistence;
 
 import br.com.jh.model.Cliente;
 
-public class SalvandoPrimeiroObjeto {
-	
+public class ConsultaPrimeiroObjeto {
+
 	public static void main(String[] args) {
 		
 		//EntityManagerFactory -< fabrica de EntityManager
@@ -15,20 +15,13 @@ public class SalvandoPrimeiroObjeto {
 		//serviço central para todas as ações de persistência. Para funcionar devo criar primeiro o EntityManagerFactory
 		EntityManager em = emf.createEntityManager();
 		
+		//Buscar pela classe e pelo codigo.
+		Cliente cliente = em.find(Cliente.class, 1L);
 		
-		//toda vez ao inicializar um banco de dados, deve iniciar uma transação
-		// o begin faz isso e atualiza o banco de dados depois deve usar o commit para commitar a transação.
-		Cliente cliente = new Cliente();
-
-		cliente.setNome("Souza Passos");
-		cliente.setIdade(14);
-		cliente.setSexo("M");
-		cliente.setProfissao("DEV");
-		
-		em.getTransaction().begin();
-		em.persist(cliente);
-		em.getTransaction().commit();
-		
-		System.out.println("Cliente salvo com sucesso!!!");
+		System.out.println(cliente.getNome());
+		System.out.println(cliente.getProfissao());
+		System.out.println(cliente.getIdade());
+		System.out.println(cliente.getSexo());
 	}
+		
 }
